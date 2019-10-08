@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/mainpage"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/foothills"
+	android:orientation="vertical"
+	tools:context="com.example.robertbrewer.counter.MainActivity">
+
+	<RelativeLayout
+		android:id="@+id/feltLakeLayout"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_alignParentTop="true"
+		android:layout_marginStart="3dp"
+		android:layout_marginTop="3dp"
+		android:layout_marginEnd="3dp"
+		android:layout_marginBottom="3dp"
+		android:gravity="top"
+		android:orientation="horizontal"
+		app:layout_constraintTop_toBottomOf="parent"
+		tools:layout_editor_absoluteX="3dp">
+
+		<Button
+			android:id="@+id/incrementFeltLakebtn"
+			android:layout_width="150dp"
+			android:layout_height="45dp"
+			android:layout_marginStart="5dp"
+			android:backgroundTint="@android:color/holo_green_light"
+			android:onClick="incrementFeltLake"
+			android:text="+FELT LAKE"
+			android:textColor="@android:color/black"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/numberFeltLakeTextView"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="75dp"
+			android:layout_toEndOf="@id/incrementFeltLakebtn"
+			android:onClick="decrementFeltLake"
+			android:text="0"
+			android:textColor="@android:color/holo_blue_dark"
+			android:textColorLink="@android:color/background_dark"
+			android:textSize="40sp" />
+
+
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/animalLayout"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_below="@+id/feltLakeLayout"
+		android:layout_marginStart="3dp"
+		android:layout_marginTop="3dp"
+		android:layout_marginEnd="3dp"
+		android:layout_marginBottom="3dp"
+		android:gravity="top"
+		android:orientation="horizontal"
+		app:layout_constraintTop_toBottomOf="@+id/feltLakeLayout"
+		tools:layout_editor_absoluteX="16dp">
+
+		<Button
+			android:id="@+id/incrementAnimalsbtn"
+			android:layout_width="150dp"
+			android:layout_height="45dp"
+			android:layout_marginStart="5dp"
+			android:backgroundTint="@android:color/holo_green_light"
+			android:onClick="incrementAnimal"
+			android:text="+ANIMALS"
+			android:textColor="@android:color/black"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/numberAnimalsTextView"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="75dp"
+			android:layout_toEndOf="@id/incrementAnimalsbtn"
+			android:onClick="decrementAnimals"
+			android:text="0"
+			android:textColor="@android:color/holo_blue_dark"
+			android:textColorLink="@android:color/background_dark"
+			android:textSize="40sp" />
+
+
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/offTrailLayout"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_below="@+id/animalLayout"
+		android:layout_marginStart="3dp"
+		android:layout_marginTop="3dp"
+		android:layout_marginEnd="3dp"
+		android:layout_marginBottom="3dp"
+		android:orientation="horizontal"
+		app:layout_constraintTop_toBottomOf="@+id/animalLayout"
+		tools:layout_editor_absoluteX="16dp">
+
+		<Button
+			android:id="@+id/incrementOffTrailbtn"
+			android:layout_width="150dp"
+			android:layout_height="45dp"
+			android:layout_marginStart="5dp"
+			android:backgroundTint="@android:color/holo_green_light"
+			android:onClick="incrementOffTrail"
+			android:text="+OFF TRAIL"
+			android:textColor="@android:color/black"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/numberOffTrailTextView"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="75dp"
+			android:layout_toEndOf="@id/incrementOffTrailbtn"
+			android:onClick="decrementOffTrail"
+			android:text="0"
+			android:textColor="@android:color/holo_blue_dark"
+			android:textColorLink="@android:color/background_dark"
+			android:textSize="40sp" />
+
+
+	</RelativeLayout>
+
+
+	<RelativeLayout
+		android:id="@+id/forbiddenItemsLayout"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_below="@+id/offTrailLayout"
+		android:layout_marginStart="3dp"
+		android:layout_marginTop="3dp"
+		android:layout_marginEnd="3dp"
+		android:layout_marginBottom="3dp"
+		android:gravity="top"
+		android:orientation="horizontal"
+		app:layout_constraintTop_toBottomOf="@+id/offTrailLayout"
+		tools:layout_editor_absoluteX="3dp">
+
+		<Button
+			android:id="@+id/incrementForbiddenItemsbtn"
+			android:layout_width="150dp"
+			android:layout_height="45dp"
+			android:layout_marginStart="5dp"
+			android:backgroundTint="@android:color/holo_green_light"
+			android:onClick="incrementForbiddenItems"
+			android:text="+FORBIDDEN"
+			android:textColor="@android:color/black"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/numberForbiddenItemsTextView"
+			android:layout_width="75dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="75dp"
+			android:layout_toEndOf="@id/incrementForbiddenItemsbtn"
+			android:onClick="decrementForbiddenItems"
+			android:text="0"
+			android:textColor="@android:color/holo_blue_dark"
+			android:textColorLink="@android:color/background_dark"
+			android:textSize="40sp" />
+
+
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/WalkUpsLayout"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_below="@+id/forbiddenItemsLayout"
+		android:layout_marginStart="3dp"
+		android:layout_marginTop="3dp"
+		android:layout_marginEnd="3dp"
+		android:layout_marginBottom="3dp"
+		android:gravity="top"
+		android:orientation="horizontal"
+		app:layout_constraintTop_toBottomOf="@+id/forbiddenItemsLayout"
+		tools:layout_editor_absoluteX="3dp">
+
+
+		<Button
+			android:id="@+id/incrementWalkUpsbtn"
+			android:layout_width="150dp"
+			android:layout_height="45dp"
+			android:layout_marginStart="5dp"
+			android:backgroundTint="@android:color/holo_green_light"
+			android:onClick="incrementWalkUps"
+			android:text="+WALKUPS"
+			android:textColor="@android:color/black"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/numberWalkUpTextView"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="75dp"
+			android:layout_toEndOf="@id/incrementWalkUpsbtn"
+			android:onClick="decrementWalkUps"
+			android:text="0"
+			android:textColor="@android:color/holo_blue_dark"
+			android:textColorLink="@android:color/background_dark"
+			android:textSize="40sp" />
+
+
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/departersLayout"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_below="@+id/WalkUpsLayout"
+		android:orientation="horizontal"
+		app:layout_constraintTop_toBottomOf="@+id/WalkUpsLayout"
+		tools:layout_editor_absoluteX="16dp">
+
+		<Button
+			android:id="@+id/incrementDepartersbtn"
+			android:layout_width="150dp"
+			android:layout_height="45dp"
+			android:layout_marginStart="5dp"
+			android:backgroundTint="@android:color/holo_green_light"
+			android:onClick="incrementDeparters"
+			android:text="+DEPARTERS"
+			android:textColor="@android:color/black"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/numberDepartersTextView"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="75dp"
+			android:layout_toEndOf="@id/incrementDepartersbtn"
+			android:onClick="decrementDeparters"
+			android:text="0"
+			android:textColor="@android:color/holo_blue_dark"
+			android:textColorLink="@android:color/background_dark"
+			android:textSize="40sp" />
+
+
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/resetLayout"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_alignParentBottom="true"
+		android:layout_marginTop="3dp"
+		android:orientation="horizontal"
+		app:layout_constraintBottom_toBottomOf="parent"
+		tools:layout_editor_absoluteX="3dp">
+
+		<Button
+			android:id="@+id/resetBtn"
+			android:layout_width="220dp"
+			android:layout_height="45dp"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentEnd="false"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="10dp"
+			android:backgroundTint="@android:color/holo_green_light"
+			android:onClick="reset"
+			android:text="RESET"
+			android:textColor="@android:color/black"
+			android:textColorLink="@color/colorPrimary"
+			android:textSize="20sp" />
+
+	</RelativeLayout>
+
+</RelativeLayout>
