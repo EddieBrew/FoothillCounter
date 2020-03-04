@@ -1,21 +1,14 @@
 package com.example.robertbrewer.counter;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import static android.R.*;
-import static android.content.Intent.*;
-import static android.graphics.Color.WHITE;
-import static android.graphics.Color.colorSpace;
 import static android.graphics.Color.red;
 
 public class MainActivity extends AppCompatActivity {
@@ -107,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 			numberFeltLakeTextView.setText("0");
 			feltLakeNumber = 0;
 
-
+			playSpecificSound(R.raw.resetbeep);
 			//The counter app is also used as a broadcast sender. The broadcast receiver
 			// is the app Broadcast Receiver
 			//noinspection deprecation
@@ -118,17 +111,34 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    
+
 
 
 	}
 
+	/*********************************************************************************
+	 *  playSpecificSound() plays an audio sound when the pressing the various buttons
+	 *  in the app
+	 *
+	 * @pre none
+	 * @parameter none
+	 * @post none
+	 **********************************************************************************/
+	private void playSpecificSound(int resource){
+		MediaPlayer mPlayer = MediaPlayer.create(this, resource);
+		mPlayer .start();;
+
+	}
+
+
+
 	public void incrementAnimal(View view){
-
-
 		animalNumber =  Integer.parseInt((String) numberAnimalsTextView.getText());
 		animalNumber++;
 		numberAnimalsTextView.setText(String.valueOf(animalNumber));
+		playSpecificSound(R.raw.incrementbeep);
+		playSpecificSound(R.raw.decrementbeep);
+
 	}
 
 	public void decrementAnimals(View view){
@@ -140,12 +150,14 @@ public class MainActivity extends AppCompatActivity {
 		}else {
 			numberAnimalsTextView.setText(String.valueOf(animalNumber));
 		}
+		playSpecificSound(R.raw.decrementbeep);
 	}
 
     public void incrementFeltLake(View view){
 		feltLakeNumber =  Integer.parseInt((String) numberFeltLakeTextView.getText());
 		feltLakeNumber++;
 	    numberFeltLakeTextView.setText(String.valueOf(feltLakeNumber));
+	    playSpecificSound(R.raw.incrementbeep);
 
 	}
 
@@ -159,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 		}else {
 			numberFeltLakeTextView.setText(String.valueOf(feltLakeNumber));
 		}
-
+		playSpecificSound(R.raw.decrementbeep);
 	}
 
 	public void incrementOffTrail(View view){
@@ -168,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
 		 offTrailNumber =  Integer.parseInt((String) numberOffTrailTextView.getText());
 		offTrailNumber++;
 		numberOffTrailTextView.setText(String.valueOf(offTrailNumber));
+		playSpecificSound(R.raw.incrementbeep);
 	}
 
 
@@ -182,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
 		}else {
 			numberOffTrailTextView.setText(String.valueOf(offTrailNumber));
 		}
-
+		playSpecificSound(R.raw.decrementbeep);
 	}
 
 
@@ -192,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
 		forbiddenNumber =  Integer.parseInt((String) numberForbiddenItemsTextView.getText());
 		forbiddenNumber++;
 		numberForbiddenItemsTextView.setText(String.valueOf(forbiddenNumber));
+		playSpecificSound(R.raw.incrementbeep);
 	}
 
 
@@ -206,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
 		}else {
 			numberForbiddenItemsTextView.setText(String.valueOf(forbiddenNumber));
 		}
-
+		playSpecificSound(R.raw.decrementbeep);
 	}
 
 
@@ -217,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
 		walkUpNumber =  Integer.parseInt((String) numberWalkUpTextView.getText());
 		walkUpNumber++;
 		numberWalkUpTextView.setText(String.valueOf(walkUpNumber));
+		playSpecificSound(R.raw.incrementbeep);
 	}
 
 	public void decrementWalkUps(View view){
@@ -230,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
 		}else {
 			numberWalkUpTextView.setText(String.valueOf(walkUpNumber));
 		}
-
+		playSpecificSound(R.raw.decrementbeep);
 	}
 
 	public void incrementDeparters(View view){
@@ -238,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
 		departersNumber =  Integer.parseInt((String) numberDepartersTextView.getText());
 		departersNumber++;
 		numberDepartersTextView.setText(String.valueOf(departersNumber));
+		playSpecificSound(R.raw.incrementbeep);
 	}
 
 	public void decrementDeparters(View view){
@@ -250,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
 		}else {
 			numberDepartersTextView.setText(String.valueOf(departersNumber));
 		}
+		playSpecificSound(R.raw.decrementbeep);
 	}
 
 }
